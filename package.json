@@ -1,0 +1,19 @@
+{
+  "name": "frame-template",
+  "version": "1.0.0",
+  "description": "Template to create frames in vanilla nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "frames",
+    "nodejs",
+    "farcast"
+  ],
+  "author": "abstrucked.eth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
