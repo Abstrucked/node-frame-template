@@ -18,17 +18,15 @@ const farcasterMeta = {
   frame: "This is a frame!",
   buttons: [
     new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames"),
-    new Button("Change Background", "post", `/`),
+    new Button("Change Background", "link", `/changeBackground`),
 
   ]
 }
 
 const buttons = farcasterMeta.buttons.map((button, i) => button.render(i)).join('\n');
-
-
-
 console.log(buttons)
-  const html = `
+
+const html = `
   <!DOCTYPE html>
     <html>
         <head>
@@ -52,7 +50,7 @@ console.log(html)
 app.get('/', (req, res) => {
   res.send(html);
 });
-app.post('/', (req, res) => {{
+app.get('/changeBackground', (req, res) => {{
   changeBackground()
   res.send(html)}
 });
