@@ -19,8 +19,14 @@ class Button {
 }
 
 const farcasterMeta = {
-  frame: ""
+  frame: "This is a frame!",
+  buttons: [
+    new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames")
+    new Button("Change Background", "post", `${defaultMeta.imgURL=""}`)
+  ]
 }
+
+
 
 const html = `
   <!DOCTYPE html>
@@ -31,12 +37,13 @@ const html = `
             <meta property="og:description" content=${defaultMeta.description}>
             <meta property="og:image" content=${defaultMeta.imgURL}>
             <!-- CUSTOM META TAGS -->
-            <meta property="fc:frame" content=contenthere">
+            <meta property="fc:frame" content="${farcasterMeta.frame}">
             <meta property="fc:frame:image" content=${defaultMeta.imgURL}>
             <!-- Buttons -->
-            <meta property="fc:frame:button:1" content="ClickMe!">
-            <meta property="fc:frame:button:1:action" content="link">
-            <meta property="fc:frame:button:1:target" content="https://warpcast.com/~/developers/frames">
+            ${farcasterMeta.buttons.map((button, i) => {
+              return i < 4 ?`<meta property="fc:button:${i+1}" content="${button.label}" data-action="${button.action}" data-target="${button.target}">`: ''
+  
+})}
         </head>
         <body>
             <h1>${defaultMeta.title}</h1>
