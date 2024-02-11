@@ -34,9 +34,9 @@ const html = `
             <meta property="fc:frame" content=contenthere">
             <meta property="fc:frame:image" content=${defaultMeta.imgURL}>
             <!-- Buttons -->
-            <meta property="fc:frame:button1" content="ClickMe!">
-            <meta property="fc:frame:button1:action" content="link">
-            <meta property="fc:frame:button1:target" content="https://warpcast.com/~/developers/frames">
+            <meta property="fc:frame:button:1" content="ClickMe!">
+            <meta property="fc:frame:button:1:action" content="link">
+            <meta property="fc:frame:button:1:target" content="https://warpcast.com/~/developers/frames">
         </head>
         <body>
             <h1>${defaultMeta.title}</h1>
