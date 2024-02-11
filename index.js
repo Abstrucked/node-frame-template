@@ -17,12 +17,16 @@ class Button {
 
   }
 }
+function changeBackground() {
+  console.log("Changing background")
+  defaultMeta.imgURL="https://imgs.search.brave.com/3WBtpqLlJzgkfpxEFkBN3Sd_yaoQ0-BPKGl5x9acgAA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9k/L2QwL0V0aC1kaWFt/b25kLXJhaW5ib3cu/cG5n"
+}
 
 const farcasterMeta = {
   frame: "This is a frame!",
   buttons: [
     new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames"),
-    new Button("Change Background", "post", `${defaultMeta.imgURL="https://imgs.search.brave.com/3WBtpqLlJzgkfpxEFkBN3Sd_yaoQ0-BPKGl5x9acgAA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9k/L2QwL0V0aC1kaWFt/b25kLXJhaW5ib3cu/cG5n"}`),
+    new Button("Change Background", "post", `${changeBackground()}`),
 
   ]
 }
