@@ -22,13 +22,20 @@ const farcasterMeta = {
   frame: "This is a frame!",
   buttons: [
     new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames"),
-    new Button("Change Background", "post", `${defaultMeta.imgURL=""}`)
+    new Button("Change Background", "post", `${defaultMeta.imgURL="https://imgs.search.brave.com/3WBtpqLlJzgkfpxEFkBN3Sd_yaoQ0-BPKGl5x9acgAA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9k/L2QwL0V0aC1kaWFt/b25kLXJhaW5ib3cu/cG5n"}`),
+
   ]
 }
 
+let buttons = ""
+for(let i = 0; i < farcasterMeta.buttons.length; i++) {
+  const button = farcasterMeta.buttons[i];
+  buttons += i < 4 ?`<meta property="fc:button:${i+1}" content="${button.label}"><fc:button:${i+1}:action="${button.action}"><fc:button:${i+1}:target="${button.target}">\n\t\t`: ''
+};
 
 
-const html = `
+console.log(buttons)
+  const html = `
   <!DOCTYPE html>
     <html>
         <head>
@@ -40,10 +47,7 @@ const html = `
             <meta property="fc:frame" content="${farcasterMeta.frame}">
             <meta property="fc:frame:image" content=${defaultMeta.imgURL}>
             <!-- Buttons -->
-            ${farcasterMeta.buttons.map((button, i) => {
-              return i < 4 ?`<meta property="fc:button:${i+1}" content="${button.label}" data-action="${button.action}" data-target="${button.target}">`: ''
-  
-})}
+            ${buttons}
         </head>
         <body>
             <h1>${defaultMeta.title}</h1>
@@ -52,6 +56,7 @@ const html = `
     </html>
 `;
 
+console.log(html)
 app.get('/', (req, res) => {
   res.send(html);
 });
