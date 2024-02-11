@@ -3,7 +3,7 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-const defaultMeta = {
+let defaultMeta = {
   title: "My Frame",
   description: "My first frame!",
   imgURL: "https://www.philmohun.com/content/images/size/w960/2022/12/farcaster-banner.png"
