@@ -26,7 +26,7 @@ const farcasterMeta = {
   frame: "This is a frame!",
   buttons: [
     new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames"),
-    new Button("Change Background", "post", `${changeBackground()}`),
+    new Button("Change Background", "post", `/changeBackground`),
 
   ]
 }
@@ -67,7 +67,10 @@ console.log(html)
 app.get('/', (req, res) => {
   res.send(html);
 });
-
+app.post('/changeBackground', (req, res) => {{
+  changeBackground()
+  res.send(html)}
+}
 app.listen(port, () => {
   console.log("listening to port ", port)
 })
