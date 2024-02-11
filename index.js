@@ -36,7 +36,7 @@ const html = `
             <!-- Buttons -->
             <meta property="fc:frame:button1" content="ClickMe!">
             <meta property="fc:frame:button1:action" content="link">
-            <meta property="fc:frame:button1:target" content="">
+            <meta property="fc:frame:button1:target" content="https://warpcast.com/~/developers/frames">
         </head>
         <body>
             <h1>${defaultMeta.title}</h1>
