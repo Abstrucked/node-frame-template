@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
 app.post('/changeBackground', (req, res) => {{
   changeBackground()
   res.send(html)}
-}
+});
 app.listen(port, () => {
   console.log("listening to port ", port)
 })
