@@ -21,7 +21,7 @@ class Button {
 const farcasterMeta = {
   frame: "This is a frame!",
   buttons: [
-    new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames")
+    new Button("Frame Validator", "link", "https://warpcast.com/~/developers/frames"),
     new Button("Change Background", "post", `${defaultMeta.imgURL=""}`)
   ]
 }
